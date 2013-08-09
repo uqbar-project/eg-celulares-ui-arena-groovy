@@ -15,6 +15,8 @@ import org.uqbar.lacar.ui.model.Action
 
 import ar.edu.celulares.domain.Celular
 import ar.edu.celulares.domain.Modelo
+import ar.edu.celulares.home.HomeCelulares
+import ar.edu.celulares.home.HomeModelos
 
 class EditarCelularWindow extends Dialog<Celular> {
 

@@ -34,6 +34,9 @@ class BuscadorCelular implements Serializable {
 	// ********************************************************
 
 	public void search() {
+		// WORKAROUND para que refresque la grilla en las actualizaciones
+		resultados = []
+		// FIN WORKAROUND
 		resultados = homeCelulares.search(numero, nombre)
 	}
 
