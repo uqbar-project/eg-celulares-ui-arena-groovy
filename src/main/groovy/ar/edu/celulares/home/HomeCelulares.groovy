@@ -1,8 +1,9 @@
 package ar.edu.celulares.home
 
-import org.apache.commons.collections15.Predicate;
+import org.apache.commons.collections15.Predicate
 import org.uqbar.commons.model.CollectionBasedHome
 import org.uqbar.commons.model.UserException
+import org.uqbar.commons.utils.ApplicationContext
 
 import ar.edu.celulares.domain.Celular
 
@@ -28,7 +29,7 @@ class HomeCelulares extends CollectionBasedHome<Celular> {
 	}
 
 	def getModelo(modeloDescripcion) {
-		HomeModelos.instance.get(modeloDescripcion)
+		ApplicationContext.instance.getSingleton(HomeModelos.class).get(modeloDescripcion)
 	}
 
 	// ********************************************************

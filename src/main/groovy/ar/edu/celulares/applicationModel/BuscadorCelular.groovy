@@ -46,7 +46,7 @@ class BuscadorCelular implements Serializable {
 	}
 
 	public void eliminarCelularSeleccionado() {
-		HomeCelulares.instance.delete(celularSeleccionado)
+		homeCelulares.delete(celularSeleccionado)
 		this.search()
 		celularSeleccionado = null
 	}
