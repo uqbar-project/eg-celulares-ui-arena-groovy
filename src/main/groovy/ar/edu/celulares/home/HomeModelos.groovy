@@ -9,7 +9,6 @@ import ar.edu.celulares.domain.Modelo
 class HomeModelos extends CollectionBasedHome<Modelo> {
 
 	static def instance = new HomeModelos()
-	def modelos = []
 
 	def static HomeModelos getInstance() {
 		if (instance == null) {
@@ -26,10 +25,10 @@ class HomeModelos extends CollectionBasedHome<Modelo> {
 		this.create(new Modelo(descripcion: "MOTOROLA RAZR V3", costo: 350, requiereResumenCuenta: false))
 	}
 
-	public void create(modelo) {
-		this.modelos.add(modelo)
+	def getModelos() {
+		allInstances()
 	}
-
+	
 	public Modelo get(descripcion) {
 		modelos.find { modelo -> modelo.descripcion.equals(descripcion) }
 	}

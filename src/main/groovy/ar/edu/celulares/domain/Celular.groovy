@@ -1,11 +1,12 @@
 package ar.edu.celulares.domain
 
+import org.uqbar.commons.model.Entity
 import org.uqbar.commons.model.ObservableUtils
 import org.uqbar.commons.model.UserException
-import org.uqbar.commons.utils.Observable;
+import org.uqbar.commons.utils.Observable
 
 @Observable
-class Celular {
+class Celular extends Entity {
 
 	public final int MAX_NUMERO = 100000
 
@@ -43,16 +44,20 @@ class Celular {
 
 	// ********************************************************
 	// ** Getters y setters
+	// Los getters y setters por default no se deben codificar
+	// peeeeeero...
+	// en nuestro ejemplo tenemos que modificar la propiedad
+	// recibeResumenCuenta en base al modelo de celular seleccionado
 	// ********************************************************
-//	def setModeloCelular(unModeloCelular) {
-//		modeloCelular = unModeloCelular
-//		recibeResumenCuenta = unModeloCelular.requiereResumenCuenta
-//	}
+	public void setModeloCelular(Modelo unModeloCelular) {
+		modeloCelular = unModeloCelular
+		recibeResumenCuenta = unModeloCelular.requiereResumenCuenta
+	}
 
-//	def setRecibeResumenCuenta(siRecibeResumenCuenta) {
-//		recibeResumenCuenta = siRecibeResumenCuenta
-//		ObservableUtils.forceFirePropertyChanged(this, "habilitaResumenCuenta", !habilitaResumenCuenta)
-//	}
+	def setRecibeResumenCuenta(boolean siRecibeResumenCuenta) {
+		recibeResumenCuenta = siRecibeResumenCuenta
+		ObservableUtils.firePropertyChanged(this, "habilitaResumenCuenta", !habilitaResumenCuenta)
+	}
 
 	def getHabilitaResumenCuenta() {
 		return !modeloCelular.requiereResumenCuenta

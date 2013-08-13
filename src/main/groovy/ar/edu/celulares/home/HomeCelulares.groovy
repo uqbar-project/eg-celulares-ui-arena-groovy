@@ -11,7 +11,6 @@ import ar.edu.celulares.domain.Celular
 class HomeCelulares extends CollectionBasedHome<Celular> {
 
 	static def instance
-	def celulares = []
 
 	def static synchronized getInstance() {
 		if (!instance) {
@@ -35,16 +34,9 @@ class HomeCelulares extends CollectionBasedHome<Celular> {
 	// ********************************************************
 	// ** Altas y bajas
 	// ********************************************************
-	public void create(Celular celular) {
+	public void validateCreate(Celular celular) {
 		celular.validar()
-		this.validarClientesDuplicados(celular)
-
-		celular.setId(this.celulares.size() + 1)
-		this.celulares.add(celular)
-	}
-
-	public void delete(Celular celular) {
-		this.celulares.remove(celular)
+		validarClientesDuplicados(celular)
 	}
 
 	protected void validarClientesDuplicados(celular) {
@@ -69,7 +61,7 @@ class HomeCelulares extends CollectionBasedHome<Celular> {
 	 * la búsqueda (23, "Gonza")
 	 */
 	def search(numero, nombre) {
-		this.celulares.findAll { celular -> 
+		allInstances().findAll { celular -> 
 			this.match(numero, celular.numero) && this.match(nombre, celular.nombre)
 		}
 	}
@@ -101,13 +93,9 @@ class HomeCelulares extends CollectionBasedHome<Celular> {
 
 	/**
 	 * Para el proyecto web - se mantiene la busqueda por Identificador
-	 *
-	 * @param numero
-	 * @param nombre
-	 * @
 	 */
-//	def searchById(int id) {
-//		celulares.find { celular -> celular.id?.equals(id) }
-//	}
+	def searchById(int id) {
+		allInstances.find { celular -> celular.id?.equals(id) }
+	}
 
 }
