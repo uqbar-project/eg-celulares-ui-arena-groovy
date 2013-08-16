@@ -15,8 +15,6 @@ import org.uqbar.lacar.ui.model.Action
 
 import ar.edu.celulares.domain.Celular
 import ar.edu.celulares.domain.Modelo
-import ar.edu.celulares.home.HomeCelulares
-import ar.edu.celulares.home.HomeModelos
 
 class EditarCelularWindow extends Dialog<Celular> {
 
@@ -61,10 +59,10 @@ class EditarCelularWindow extends Dialog<Celular> {
 	}
 
 	def getHomeCelulares() {
-		ApplicationContext.instance.getSingleton(HomeCelulares.class)
+		ApplicationContext.instance.getSingleton(Celular.class)
 	}
 
 	def getHomeModelos() {
-		ApplicationContext.instance.getSingleton(HomeModelos.class)
+		ApplicationContext.instance.getSingleton(Modelo.class)
 	}
 }
