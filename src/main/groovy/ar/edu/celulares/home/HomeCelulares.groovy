@@ -16,11 +16,12 @@ class HomeCelulares extends CollectionBasedHome<Celular> {
 	def static synchronized getInstance() {
 		if (!instance) {
 			instance = new HomeCelulares()
+			instance.init()
 		}
 		instance
 	}
 
-	def HomeCelulares() {
+	def init() {
 		this.create(new Celular(nombre: "Laura Iturbe", numero: 88022202, modeloCelular: getModelo("NOKIA LUMIA 625"), recibeResumenCuenta: false))
 		this.create(new Celular(nombre: "Julieta Passerini", numero: 45636453, modeloCelular: getModelo("NOKIA ASHA 501"), recibeResumenCuenta: false))
 		this.create(new Celular(nombre: "Debora Fortini", numero: 45610892, modeloCelular: getModelo("NOKIA ASHA 501"), recibeResumenCuenta: true))

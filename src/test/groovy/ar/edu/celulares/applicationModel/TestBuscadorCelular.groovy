@@ -9,20 +9,19 @@ import ar.edu.celulares.domain.Celular
 import ar.edu.celulares.domain.Modelo
 import ar.edu.celulares.home.HomeCelulares
 import ar.edu.celulares.home.HomeModelos
+import ar.edu.celulares.home.MockHomeCelulares
 
-class TestBuscadorCelular {
+class TestBuscadorCelular extends AbstractTestBuscadorCelular {
 
-	BuscadorCelular searcher
 	BuscadorCelular buscadorFallido
 	
 	@Before
 	def void init() {
-		searcher = new BuscadorCelular(nombre: "Do", numero: null)
+		super.init()
 		buscadorFallido = new BuscadorCelular(nombre: "XXXX", numero: null)
-		ApplicationContext.instance.configureSingleton(Modelo.class, HomeModelos.instance)
 		ApplicationContext.instance.configureSingleton(Celular.class, HomeCelulares.instance)
 	}
-	
+
 	@Test
 	def void buscarSinResultados() {
 		buscadorFallido.search()
