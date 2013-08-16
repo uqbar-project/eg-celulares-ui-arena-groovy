@@ -11,16 +11,10 @@ import ar.edu.celulares.domain.Modelo
 @org.uqbar.commons.utils.Observable
 class HomeCelulares extends CollectionBasedHome<Celular> {
 
-	static def instance
-
-	def static synchronized getInstance() {
-		if (!instance) {
-			instance = new HomeCelulares()
-			instance.init()
-		}
-		instance
+	HomeCelulares() {
+		init()
 	}
-
+	
 	def init() {
 		this.create(new Celular(nombre: "Laura Iturbe", numero: 88022202, modeloCelular: getModelo("NOKIA LUMIA 625"), recibeResumenCuenta: false))
 		this.create(new Celular(nombre: "Julieta Passerini", numero: 45636453, modeloCelular: getModelo("NOKIA ASHA 501"), recibeResumenCuenta: false))

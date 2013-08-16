@@ -15,7 +15,7 @@ class AbstractTestBuscadorCelular {
 	@Before
 	def void init() {
 		searcher = new BuscadorCelular(nombre: "Dodi", numero: null)
-		ApplicationContext.instance.configureSingleton(Modelo.class, HomeModelos.instance)
+		ApplicationContext.instance.configureSingleton(Modelo.class, new HomeModelos())
 	}
 
 }

@@ -13,7 +13,7 @@ class TestBuscadorCelularHomeMockeado extends AbstractTestBuscadorCelular {
 	@Before
 	def void init() {
 		super.init()
-		ApplicationContext.instance.configureSingleton(Celular.class, MockHomeCelulares.instance)
+		ApplicationContext.instance.configureSingleton(Celular.class, new MockHomeCelulares())
 	}
 
 	@Test

@@ -19,7 +19,7 @@ class TestBuscadorCelular extends AbstractTestBuscadorCelular {
 	def void init() {
 		super.init()
 		buscadorFallido = new BuscadorCelular(nombre: "XXXX", numero: null)
-		ApplicationContext.instance.configureSingleton(Celular.class, HomeCelulares.instance)
+		ApplicationContext.instance.configureSingleton(Celular.class, new HomeCelulares())
 	}
 
 	@Test

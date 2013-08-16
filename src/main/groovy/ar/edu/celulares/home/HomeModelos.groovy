@@ -8,15 +8,6 @@ import ar.edu.celulares.domain.Modelo
 @org.uqbar.commons.utils.Observable
 class HomeModelos extends CollectionBasedHome<Modelo> {
 
-	static def instance = new HomeModelos()
-
-	def static HomeModelos getInstance() {
-		if (instance == null) {
-			instance = new HomeModelos()
-		}
-		return instance
-	}
-
 	HomeModelos() {
 		this.create(new Modelo(descripcion: "NOKIA ASHA 501", costo: 700, requiereResumenCuenta: true))
 		this.create(new Modelo(descripcion: "LG OPTIMUS L5 II", costo: 920, requiereResumenCuenta: false))
