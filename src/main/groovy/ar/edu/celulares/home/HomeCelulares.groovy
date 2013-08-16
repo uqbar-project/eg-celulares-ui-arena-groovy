@@ -6,6 +6,7 @@ import org.uqbar.commons.model.UserException
 import org.uqbar.commons.utils.ApplicationContext
 
 import ar.edu.celulares.domain.Celular
+import ar.edu.celulares.domain.Modelo
 
 @org.uqbar.commons.utils.Observable
 class HomeCelulares extends CollectionBasedHome<Celular> {
@@ -28,7 +29,7 @@ class HomeCelulares extends CollectionBasedHome<Celular> {
 	}
 
 	def getModelo(modeloDescripcion) {
-		ApplicationContext.instance.getSingleton(HomeModelos.class).get(modeloDescripcion)
+		ApplicationContext.instance.getSingleton(Modelo.class).get(modeloDescripcion)
 	}
 
 	// ********************************************************
