@@ -3,7 +3,6 @@ package ar.edu.celulares.applicationModel
 import org.uqbar.commons.utils.ApplicationContext
 
 import ar.edu.celulares.domain.Celular
-import ar.edu.celulares.home.HomeCelulares
 
 /**
  * Application model que representa la búsqueda de {@link Celular}.
@@ -52,6 +51,6 @@ class BuscadorCelular implements Serializable {
 	}
 
 	def getHomeCelulares() {
-		ApplicationContext.instance.getSingleton(HomeCelulares.class)
+		ApplicationContext.instance.getSingleton(Celular.class)
 	}
 }
