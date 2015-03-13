@@ -19,7 +19,6 @@ import org.uqbar.lacar.ui.model.Action
 import ar.edu.celulares.applicationModel.BuscadorCelular
 import ar.edu.celulares.domain.Celular
 
-import com.uqbar.commons.collections.Transformer
 
 /**
  * Ventana de búsqueda de celulares.
@@ -114,8 +113,8 @@ class BuscarCelularesWindow extends SimpleWindow<BuscadorCelular> {
 	protected void createResultsGrid(Panel mainPanel) {
 		def table = new Table<Celular>(mainPanel, Celular.class)
 		table.with {
-			heigth = 200
-			width = 450
+			setHeight(200)
+			setWidth(450)
 			bindItemsToProperty("resultados")
 			bindValueToProperty("celularSeleccionado")
 		}
@@ -149,7 +148,7 @@ class BuscarCelularesWindow extends SimpleWindow<BuscadorCelular> {
 		ingresoColumn.setTitle("Recibe resumen de cuenta")
 		ingresoColumn.setFixedSize(50)
 		// TODO: Ver si lo bindeo contra org.uqbar.Transformer
-		ingresoColumn.bindContentsToTransformer({ celular -> celular.recibeResumenCuenta ? "SI" : "NO"} as Transformer<Celular, String>)
+		ingresoColumn.bindContentsToTransformer({ celular -> celular.recibeResumenCuenta ? "SI" : "NO"})
 	}
 
 	protected void createGridActions(Panel mainPanel) {

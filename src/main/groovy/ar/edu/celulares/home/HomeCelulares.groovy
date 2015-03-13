@@ -87,11 +87,5 @@ class HomeCelulares extends CollectionBasedHome<Celular> {
 		null
 	}
 
-	/**
-	 * Para el proyecto web - se mantiene la busqueda por Identificador
-	 */
-	def searchById(int id) {
-		allInstances.find { celular -> celular.id?.equals(id) }
-	}
 
 }

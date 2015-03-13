@@ -52,10 +52,6 @@ class Celular extends Entity {
 	public void setModeloCelular(Modelo unModeloCelular) {
 		modeloCelular = unModeloCelular
 		recibeResumenCuenta = unModeloCelular.requiereResumenCuenta
-	}
-
-	def setRecibeResumenCuenta(boolean siRecibeResumenCuenta) {
-		recibeResumenCuenta = siRecibeResumenCuenta
 		ObservableUtils.firePropertyChanged(this, "habilitaResumenCuenta", !habilitaResumenCuenta)
 	}
 
