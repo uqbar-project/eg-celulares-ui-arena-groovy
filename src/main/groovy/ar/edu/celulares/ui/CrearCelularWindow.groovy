@@ -8,6 +8,7 @@ class CrearCelularWindow extends EditarCelularWindow {
 
 	public CrearCelularWindow(WindowOwner owner) {
 		super(owner, new Celular())
+		title = "Nuevo celular"
 	}
 
 	@Override

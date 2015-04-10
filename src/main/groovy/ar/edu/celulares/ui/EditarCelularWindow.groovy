@@ -1,5 +1,7 @@
 package ar.edu.celulares.ui
 
+import javax.swing.Spring.WidthSpring;
+
 import org.uqbar.arena.bindings.ObservableProperty
 import org.uqbar.arena.bindings.PropertyAdapter
 import org.uqbar.arena.layout.ColumnLayout
@@ -20,6 +22,7 @@ class EditarCelularWindow extends Dialog<Celular> {
 
 	public EditarCelularWindow(owner, model) {
 		super(owner, model)
+		title = "Editar celular"
 	}
 
 	@Override
@@ -30,7 +33,10 @@ class EditarCelularWindow extends Dialog<Celular> {
 			new Label(it).text = "Número"
 			new TextBox(it).bindValueToProperty("numero")
 			new Label(it).text = "Nombre del cliente"
-			new TextBox(it).bindValueToProperty("nombre")
+			new TextBox(it).with {
+				bindValueToProperty("nombre")
+				width = 200	
+			}	
 			new Label(it).text = "Modelo del aparato"
 			new Selector<Modelo>(it).with {
 				allowNull(false)
